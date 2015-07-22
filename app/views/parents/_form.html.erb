@@ -1,0 +1,30 @@
+<%= form_for @parent, remote: true do |f| %>
+
+  <%= f.fields_for :links do |img| %>
+  	<div class="form-group">
+		<div class="hidden">
+			<%= img.file_field :image %>
+		</div>
+  	</div>
+	<div class="target">
+		<div id="dropzone">
+			<div class="fade">
+				Drop files here
+			</div>
+		</div>
+	</div>
+	<div class="progress-wrapper">
+		<p>Bitrate:<span class="bitrate"></span></p>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar">
+				0%
+			</div>
+		</div>
+	</div>
+		
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
